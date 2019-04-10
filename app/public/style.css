@@ -1,7 +1,16 @@
 body {
   background-image: url(./images/FofC.jpeg);
   width: 100%;
+  background-repeat: none;
+  background-size: 100%;
 }
 
 .container {
+  width: 960px;
+  margin: auto;
+}
+
+.jumbotron {
+  opacity: 0.75;
+  color: black;
 }

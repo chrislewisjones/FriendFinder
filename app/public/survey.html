@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Survey</title>
+    <title>Friends</title>
 
     <!-- Latest compiled and minified CSS & JS -->
     <link
@@ -166,7 +166,7 @@
       <footer class="footer">
         <div class="container">
           <p>
-            <a href="/api/tables">API Friends List</a> |
+            <a href="/api/friends">API Friends List</a> |
             <a href="https://github.com/chrislewisjones/FriendFinder"
               >GitHub Repo</a
             >
@@ -174,41 +174,40 @@
         </div>
       </footer>
     </div>
-  </body>
-</html>
-
-<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
-<script type="text/javascript">
-  // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
-  // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-  // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
-  // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
-
+    
+    
+    <script type="text/javascript">
+  
+  
   $(".submit").on("click", function(event) {
     event.preventDefault();
-
-    // Here we grab the form elements
+    
+    
     var newUser = {
-          name: $("#name").val(),
-          photo: $("#photo").val(),
-          scores: [
-            $("#q1").val(),
-            $("#q2").val(),
-            $("#q3").val(),
-            $("#q4").val(),
-            $("#q5").val(),
-            $("#q6").val(),
-            $("#q7").val(),
+      name: $("#name").val().trim(),
+      photo: $("#photo").val(),
+      scores: [
+        $("#q1").val(),
+        $("#q2").val(),
+        $("#q3").val(),
+        $("#q4").val(),
+        $("#q5").val(),
+        $("#q6").val(),
+        $("#q7").val(),
             $("#q8").val()
           ]
-    };
+        };
+        
+        console.log(newUser);
+        return newUser;
+        
+      //   $.post("/api/friends", newUser, function(data) {
+          
+      //     $("#match-name").text(data.name);
+      //     $("#match-img").attr("src", data.photo);
+      //   });
+      // });
+      </script>
 
-    console.log(newUser);
-
-    $.post("/api/friends", newUser, function(data) {
-    
-      $("#match-name").text(data.name);
-          $("#match-img").attr("src", data.photo);
-    });
-  });
-</script>
+</body>
+</html>

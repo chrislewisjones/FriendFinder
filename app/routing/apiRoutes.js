@@ -1,4 +1,5 @@
 // var mysql = require("mysql");
+// var path = require("path");
 
 // var connection;
 // if (process.env.JAWSDB_URL) {
@@ -43,6 +44,15 @@ module.exports = function(app) {
       res.json(result);
     });
   });
-};
 
-//add post route
+  //   $.post("/api/friends", newUser, function(data) {
+  //     connection.query(
+  //       "INSERT INTO profiles (name, photo, scores) VALUES (?,?,?)"[
+  //         (newUser.name, newUser.photo, newUser.scores)
+  //       ],
+  //       function(err, result) {
+  //         res.json(result);
+  //       }
+  //     );
+  //   });
+};
