@@ -5,9 +5,11 @@ CREATE database friendfinder_DB;
 USE friendfinder_DB;
 
 CREATE TABLE IF NOT EXISTS profiles (
-   name VARCHAR(25),
+   id not null auto_increment,
+   name VARCHAR(25) not null,
    photo VARCHAR(255),
-   scores VARCHAR(25)
+   scores VARCHAR(50),
+   Primary KEY (id)
 );
 
 SELECT * FROM profiles;
